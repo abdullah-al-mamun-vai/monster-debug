@@ -38,18 +38,12 @@ const typeController = (e) => {
     return;
   }
   userText += newLetter;
-
   const newLetterCorrect = validate(newLetter);
-  console.log(newLetterCorrect);
-
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
-
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
-    console.log
   }
-
   // check if given question text is equal to user typed text
   if (questionText === userText) {
     gameOver();
@@ -122,7 +116,7 @@ const start = () => {
       startTime = new Date().getTime();
     }
     count--;
-  }, 1000);
+  }, 0);
 };
 
 // START Countdown

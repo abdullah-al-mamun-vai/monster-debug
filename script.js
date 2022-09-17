@@ -16,7 +16,6 @@ fetch("./texts.json")
   .then((res) => res.json())
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
-    console.log(questionText)
     question.innerHTML = questionText;
   });
 
@@ -38,15 +37,17 @@ const typeController = (e) => {
   if (!validLetters.includes(newLetter)) {
     return;
   }
-
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
+  console.log(newLetterCorrect);
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
+
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    console.log
   }
 
   // check if given question text is equal to user typed text
